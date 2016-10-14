@@ -42,18 +42,6 @@ controller.hears(
   });
 });
 
-controller.hears(
-  ['malaka','μαλάκα','μαλακα','poulo','πουλο','πούλο','pousti','πούστης','πουστης','πουστη','poutana','πουτανα','gamw','gamo','kariola','καριολα','γαμώ','γαμω','gamiesai','γαμιέσαι'],
-  'direct_message,direct_mention,mention,ambient',function(bot,message){
-  controller.storage.users.get(message.user,function(err,user){
-    if(user && user.name){
-      bot.reply(message,"Μην βρίζεις ρε μαλάκα " + user.name + "!");
-    }else{
-      bot.reply(message,"Μην βρίζεις!");
-    }
-  });
-});
-
 controller.hears(['hello','hi','γεια','geia'],'direct_message,direct_mention,mention',function(bot,message) {
 
   controller.storage.users.get(message.user,function(err,user) {
